@@ -15,11 +15,11 @@
 int main(void) {
     /* Insert DDR and PORT initializations */
   DDRA = 0x00; PORTA = 0xFF;
-  DDRC = 0xFF; PORTC = 0x00;
+  DDRB = 0xFF; PORTB = 0x00;
   unsigned char cntavail = 0;
   unsigned char tmpA = 0;
   unsigned char freeSpace = 0;
-  unsigned char tmpC = 0;
+  unsigned char tmpB = 0;
     /* Insert your solution below */
     while (1) {
      cntavail = 0;
@@ -40,11 +40,11 @@ int main(void) {
 	cntavail = cntavail + 1;
       }
       freeSpace = 4 - cntavail;
-      tmpC = freeSpace & 0x0F;
+      tmpB = freeSpace & 0x0F;
       	if(cntavail == 0){
-      		tmpC = tmpC | 0x80;
+      		tmpB = tmpB | 0x80;
       	}
-	PORTC = tmpC;
+	PORTB = tmpB;
     }
     return 1;
 }
