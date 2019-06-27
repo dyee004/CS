@@ -37,7 +37,7 @@ int main(void) {
       if(tmpA == 0x08){
 	cntavail = cntavail+1;
       }
-      PORTC = 4 - cntavail;
+      PORTB = 4 - cntavail;
     }
     return 1;
 }
